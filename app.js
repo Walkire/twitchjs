@@ -1,8 +1,8 @@
 var tmi = require('tmi.js');
 var request = require('request');
-var url = 'https://tmi.twitch.tv/group/user/walkire/chatters';
 var points = require('./helpers/pointHelper');
 var options = require('./config.json');
+var url = 'https://tmi.twitch.tv/group/user/walkire/chatters';
 var client = new tmi.client(options);
 
 client.connect();
@@ -32,12 +32,20 @@ client.on("chat", function (channel, userstate, message, self){
   var user = userstate.username;
   var startsWith = message.split(" ")[0];
   var arg1 = message.split(" ")[1];
+  var arg2 = message.split(" ")[2];
+
   switch(startsWith) {
     case "!points":
       if (result = points.getPoints(arg1, user)) {
         client.action(channel, result); }
       break;
     case "!give":
+      if(result = points.givePoints(arg1, arg2, user)) {
+        client.action(channel, result); }
+      break;
+    case "!leaderboard":
+      if(result = points.showLeaderboard()) {
+        client.action(channel, result)}
       break;
     default:
   }
