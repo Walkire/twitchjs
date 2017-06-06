@@ -23,11 +23,11 @@ exports.getPoints = function(option, user) {
 exports.givePoints = function (rec, amount, giver) {
   var points;
   amount = Number(amount);
-  if(rec == undefined || amount == undefined || amount < 1) return false;
-  else if(!(points = viewer.getValue(giver))) return false;
-  else if(amount > points) {
+  if(rec == undefined || amount == undefined || amount < 1 || isNaN(amount)) return false;
+  if(!(points = viewer.getValue(giver))) return false;
+  if(amount > points) {
     return giver+" you are too broke to bet that much.(Points: "+points+")";}
-  else if(viewer.viewerExist(rec)) {
+  if(viewer.viewerExist(rec)) {
     viewer.setValue(giver, -1*amount, "points");
     viewer.setValue(rec, amount, "points");
     return giver+" gave "+rec+" "+amount+" points <3";
@@ -47,4 +47,24 @@ exports.showLeaderboard = function(){
     returnStr = returnStr + xplus+") "+keysSorted[x]+": "+newObj[keysSorted[x]]+". ";
   }
   return returnStr;
+}
+
+exports.betGame = function(amount, user){
+  if(amount == undefined || amount < 1 || isNaN(amount)) return false;
+  if (!(viewer.setValue(user, -1*amount, "points"))) return false;
+  var randNum = Math.floor(Math.random()*100+1);
+  if (randNum < 51) {
+    return "Sorry, you lost it all "+user+" :("}
+  if (randNum < 76) {
+    var randNum2 = Math.floor(Math.random()*(amount*2)+1);
+    viewer.setValue(user, randNum2, "points");
+    return "You won back "+randNum2+" points "+user}
+  if (randNum < 100){
+    viewer.setValue(user, amount*2, "points");
+    return "You won double the amount you bet "+user}
+  if (randNum == 100){
+    viewer.setValue(user, amount*4, "points");
+    return "Congrats "+user+", you won 4 times the amount you bet! PogChamp"}
+  viewer.setValue(user, amount, "points");
+  return "Error: Points returned"
 }

@@ -37,14 +37,18 @@ client.on("chat", function (channel, userstate, message, self){
   switch(startsWith) {
     case "!points":
       if (result = points.getPoints(arg1, user)) {
-        client.action(channel, result); }
+        client.action(channel, result)}
       break;
     case "!give":
       if(result = points.givePoints(arg1, arg2, user)) {
-        client.action(channel, result); }
+        client.action(channel, result)}
       break;
     case "!leaderboard":
       if(result = points.showLeaderboard()) {
+        client.action(channel, result)}
+      break;
+    case "!bet":
+      if(result = points.betGame(arg1, user)) {
         client.action(channel, result)}
       break;
     default:
