@@ -45,6 +45,7 @@ exports.showLeaderboard = function(){
   for (var x in keysSorted) {
     var xplus = Number(x) +1;
     returnStr = returnStr + xplus+") "+keysSorted[x]+": "+newObj[keysSorted[x]]+". ";
+    if(x >= 4) break;
   }
   return returnStr;
 }
@@ -52,11 +53,11 @@ exports.showLeaderboard = function(){
 exports.betGame = function(amount, user){
   if(amount == undefined || amount < 1 || isNaN(amount)) return false;
   if (!(viewer.setValue(user, -1*amount, "points"))) return false;
-  var randNum = Math.floor(Math.random()*100+1);
+  var randNum = Math.floor(Math.random()*100)+1;
   if (randNum < 51) {
     return "Sorry, you lost it all "+user+" :("}
   if (randNum < 76) {
-    var randNum2 = Math.floor(Math.random()*(amount*2)+1);
+    var randNum2 = Math.floor(Math.random()*(amount*2))+1;
     viewer.setValue(user, randNum2, "points");
     return "You won back "+randNum2+" points "+user}
   if (randNum < 100){

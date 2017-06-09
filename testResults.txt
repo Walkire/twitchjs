@@ -1,0 +1,14 @@
+Walkire: !raffle
+foxbrobot raffle
+Walkire: !raffle start
+foxbrobot startRaffle
+Walkire: !raffle end
+foxbrobot endRaffle
+Walkire: !raffle adsasdasd
+Walkire: !raffle en
+Walkire: !raffle 123
+Legirra: !raffle start
+foxbrobot raffle
+Legirra: !raffle end
+foxbrobot raffle
+Walkire: thanks!
