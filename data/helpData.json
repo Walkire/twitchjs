@@ -1,0 +1,26 @@
+{
+  "points":{
+    "details": "shows how many points you or another user has, everyone gets 1 point every 5 seconds in chat",
+    "args": "!points ?username"
+  },
+  "give": {
+    "details": "give points to another user",
+    "args": "!points username amount"
+  },
+  "leaderboard": {
+    "details": "Shows top 5 users with the highest points",
+    "args": "!leaderboard"
+  },
+  "bet": {
+    "details": "try your luck in a game of chance!",
+    "args": "!bet amount"
+  },
+  "raffle": {
+    "details": "start, end or enter a raffle. Only host can start or end raffle",
+    "args": "!raffle ?option"
+  },
+  "help": {
+    "details": "Show help list, or a detailed description of one command",
+    "args": "!help ?command"
+  }
+}

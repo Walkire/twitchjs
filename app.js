@@ -2,8 +2,9 @@ var tmi = require('tmi.js');
 var request = require('request');
 var points = require('./helpers/pointHelper');
 var raffle = require('./helpers/raffleHelper');
+var help = require('./helpers/helpMenu')
 var options = require('./config.json');
-var url = 'https://tmi.twitch.tv/group/user/walkire/chatters';
+var url = 'https://tmi.twitch.tv/group/user/'+options.channels[0].substring(1)+'/chatters';
 var client = new tmi.client(options);
 
 client.connect();
@@ -59,6 +60,10 @@ client.on("chat", function (channel, userstate, message, self){
     case "!raffle":
       if(result = raffle.sortRaffle(arg1, user, host)) {
         client.action(channel, result)}
+      break;
+    case "!help":
+      if(result = help.showHelp(arg1, user)) {
+        client.whisper(user, result)}
       break;
   }
 });

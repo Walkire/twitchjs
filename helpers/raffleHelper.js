@@ -30,7 +30,8 @@ function endRaffle(){
     var randNum = Math.floor(Math.random()*sizeOf);
     var winner = inGame[randNum];
     inGame = [];
-    return winner+" has won the raffle! Congrats! PogChamp";
+    if (winner == undefined) {return "No entry for the raffle"}
+    return winner+" has won the raffle! Congrats!";
   }
   else {return "No raffle to end"}
 }
