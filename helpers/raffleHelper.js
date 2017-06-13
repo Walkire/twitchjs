@@ -3,7 +3,7 @@ var isHost = 0;
 var inGame = [];
 
 exports.sortRaffle = function(arg1, user, host){
-  if (("#"+user) == host) {isHost = 1;}
+  if (user == host) {isHost = 1;}
   else {isHost = 0;}
 
   if(arg1 == undefined){
