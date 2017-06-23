@@ -1,9 +1,9 @@
 var bot = require('./../data/stateData.json');
 
-exports.setState = function(state, value) {
-  bot.states[state] = value;
+exports.setState = function(game, option, value, channel) {
+  bot[channel][game][option] = value;
 }
 
-exports.getState = function(state) {
-  return bot.states[state];
+exports.getState = function(game, option, channel) {
+  return bot[channel][game][option];
 }

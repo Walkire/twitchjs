@@ -1,30 +1,39 @@
 var jsonfile = require('jsonfile');
 var viewer = require("./../data/viewerData.json");
 
-exports.setValue = function(user, value, option) {
-  if(!(user in viewer)) return false;
-  if (option == "points") viewer[user]["points"] += value;
-  else viewer[user][option] = value;
+exports.setValue = function(user, value, option, channel) {
+  if (viewer[channel] == undefined) return false;
+  if(!(user in viewer[channel])) return false;
+  if (option == "points") viewer[channel][user]["points"] += value;
+  else viewer[channel][user][option] = value;
   jsonfile.writeFile("./data/viewerData.json", viewer, {spaces: 2}, function(err){
     //console.error(err);
   })
   return true;
 }
 
-exports.getValue = function(user, value){
-  if(!(user in viewer)) return false;
-  return viewer[user][value];
+exports.getValue = function(user, value, channel){
+  if(viewer[channel] == undefined) return false;
+  if(!(user in viewer[channel])) return false;
+  return viewer[channel][user][value];
 }
 
-exports.viewerExist = function(user){
-  if(user in viewer) return true;
+exports.viewerExist = function(user, channel){
+  if(user in viewer[channel]) return true;
   return false;
 }
 
-exports.createViewer = function(user) {
-  viewer[user] = {"points": 100}
+exports.createViewer = function(user, channel) {
+  if(viewer[channel] == undefined) return false;
+  viewer[channel][user] = {"points":100};
+  return true;
 }
 
-exports.getObject = function(user) {
-  return viewer;
+exports.getObject = function(channel) {
+  return viewer[channel];
+}
+
+exports.createChannel = function(channel){
+  viewer[channel] = {"foxbrobot": {"points": null}};
+  return true;
 }

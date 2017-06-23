@@ -1,35 +1,57 @@
 {
-  "foxbrobot": {
-    "points": null
-  },
   "walkire": {
-    "points": 942
-  },
-  "legirra": {
-    "points": 14539
-  },
-  "hintzy21": {
-    "points": 15397
-  },
-  "kaviserra": {
-    "points": 11232
+    "foxbrobot": {
+      "points": null
+    },
+    "legirra": {
+      "points": 15481
+    },
+    "hintzy21": {
+      "points": 15467
+    },
+    "kaviserra": {
+      "points": 11232
+    },
+    "gimmethefox": {
+      "points": 6508
+    },
+    "ultrazipper": {
+      "points": 2405
+    },
+    "automaticfrenzy": {
+      "points": 323
+    },
+    "amanthor110": {
+      "points": 802
+    },
+    "faegwent": {
+      "points": 1128
+    },
+    "cellender": {
+      "points": 107
+    },
+    "walkire": {
+      "points": 213
+    }
   },
   "gimmethefox": {
-    "points": 6508
-  },
-  "ultrazipper": {
-    "points": 2405
-  },
-  "automaticfrenzy": {
-    "points": 323
-  },
-  "amanthor110": {
-    "points": 802
-  },
-  "faegwent": {
-    "points": 1128
-  },
-  "cellender": {
-    "points": 107
+    "foxbrobot": {
+      "points": null
+    },
+    "moobot": {
+      "points": -999999908
+    },
+    "walkire": {
+      "points": 166
+    },
+    "hintzy21": {
+      "points": 152
+    },
+    "kaviserra": {
+      "points": 101
+    },
+    "gimmethefox": {
+      "points": 100
+    }
   }
 }

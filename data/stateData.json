@@ -1,5 +1,14 @@
 {
-  "states": {
-    "raffle": 0
+  "walkire":{
+    "raffle": {
+      "state": 0,
+      "inGame":[]
+    }
+  },
+  "gimmethefox": {
+    "raffle": {
+      "state": 0,
+      "inGame": []
+    }
   }
 }
