@@ -2,7 +2,11 @@ var state = require("./../mutator/stateAccessor")
 var isHost = 0;
 
 exports.sortRaffle = function(arg1, user, host){
+<<<<<<< HEAD
   if (user == "walkire") {isHost = 1;}
+=======
+  if (user == host) {isHost = 1;}
+>>>>>>> 261cfd604a9bcca383b950623bb4fece088efa7b
   else {isHost = 0;}
 
   if(arg1 == undefined){

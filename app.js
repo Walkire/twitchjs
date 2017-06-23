@@ -36,7 +36,11 @@ client.on("ping", function(){
 client.on("chat", function (channel, userstate, message, self){
   if(self) return;
   var result;
+<<<<<<< HEAD
   var channel = channel.substring(1);
+=======
+  var host = options.channels[0].substring(1);
+>>>>>>> 261cfd604a9bcca383b950623bb4fece088efa7b
   var user = userstate.username;
   var startsWith = message.split(" ")[0];
   var arg1 = message.split(" ")[1];
