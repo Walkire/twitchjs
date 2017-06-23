@@ -1,4 +1,4 @@
-# FoxBot
+# Twitch.js
 
 Twitch chat mod bot using Javascript and Node
 
