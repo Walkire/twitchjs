@@ -1,4 +1,8 @@
 {
+  "aboutme":{
+    "details": "If you have any features youd like to suggest or bugs youd like to report please message Walkire about them. I am very new so any help would be appreciated :). twitch.tv/walkire",
+    "args": "Hello, I am foxbrobot! :D I am a moderator twitch bot created by twitch user: Walkire"
+  },
   "points":{
     "details": "shows how many points you or another user has, everyone gets 1 point every 5 seconds in chat",
     "args": "!points ?username"

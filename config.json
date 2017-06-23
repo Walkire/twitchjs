@@ -7,7 +7,7 @@
     },
     "identity": {
         "username": "foxbrobot",
-        "password": "oauth:5siq8blardbd4lo7dy6vaw3h6wm5o6"
+        "password": "oauth:"
     },
     "channels": ["walkire","gimmethefox"]
 }

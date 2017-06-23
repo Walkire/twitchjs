@@ -8,6 +8,7 @@ exports.showHelp = function(command, user){
     return returnStr;}
   else {
     if (command in helpList) {
+      if (command == 'aboutme') {return helpList[command]["args"] + " -- "+ helpList[command]["details"]; }
       return helpList[command]["args"] + " -- "+ helpList[command]["details"]+ " (?=optional)"}
     else {return command+" is not a command"}
   }
