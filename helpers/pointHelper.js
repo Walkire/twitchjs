@@ -28,7 +28,7 @@ exports.givePoints = function (rec, amount, giver, channel) {
   if(rec == undefined || amount == undefined || amount < 1 || isNaN(amount)) return false;
   if(!(points = viewer.getValue(giver, "points", channel))) return false;
   if(amount > points) {
-    return giver+" you are too broke to bet that much.(Points: "+points+")";}
+    return giver+" you are too broke to give that much.(Points: "+points+")";}
   if(viewer.viewerExist(rec, channel)) {
     viewer.setValue(giver, -1*amount, "points", channel);
     viewer.setValue(rec, amount, "points", channel);
@@ -53,17 +53,23 @@ exports.showLeaderboard = function(channel){
 }
 
 exports.betGame = function(amount, user, channel){
+  var currentPoints;
+  if(!(currentPoints = viewer.getValue(user, "points", channel))) return false;
   if(amount == undefined || amount < 1 || isNaN(amount)) return false;
+  if(currentPoints < amount) return "You are too broke to bet that much";
   if (!(viewer.setValue(user, -1*amount, "points", channel))) return false;
   var randNum = Math.floor(Math.random()*100)+1;
   if (randNum < 61) {
-    return "Sorry, you lost it all "+user+" :("}
+    currentPoints = viewer.getValue(user, "points", channel);
+    return "Sorry, you lost it all "+user+" :( ("+currentPoints+" points)"}
   if (randNum < 99){
     viewer.setValue(user, amount*2, "points", channel);
-    return "You won double the amount you bet "+user}
+    currentPoints = viewer.getValue(user, "points", channel);
+    return "You won double the amount you bet "+user+" ("+currentPoints+" points)"}
   if (randNum < 101){
     viewer.setValue(user, amount*4, "points", channel);
-    return "Congrats "+user+", you won 4 times the amount you bet! PogChamp"}
+    currentPoints = viewer.getValue(user, "points", channel);
+    return "Congrats "+user+", you won 4 times the amount you bet! PogChamp ("+currentPoints+" points)"}
   viewer.setValue(user, amount, "points", channel);
   return "Error: Points returned"
 }

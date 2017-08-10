@@ -25,7 +25,7 @@ exports.viewerExist = function(user, channel){
 
 exports.createViewer = function(user, channel) {
   if(viewer[channel] == undefined) return false;
-  viewer[channel][user] = {"points":100};
+  viewer[channel][user] = {"points":100, "mod":false};
   return true;
 }
 
@@ -36,4 +36,11 @@ exports.getObject = function(channel) {
 exports.createChannel = function(channel){
   viewer[channel] = {"foxbrobot": {"points": null}};
   return true;
+}
+
+exports.setAll = function(option, value, channel){
+  var list = viewer[channel];
+  for(var x in list){
+    viewer[channel][x][option] = value;
+  }
 }

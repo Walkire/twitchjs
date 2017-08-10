@@ -1,30 +1,42 @@
 {
   "aboutme":{
     "details": "If you have any features youd like to suggest or bugs youd like to report please message Walkire about them. I am very new so any help would be appreciated :). twitch.tv/walkire",
-    "args": "Hello, I am foxbrobot! :D I am a moderator twitch bot created by twitch user: Walkire"
+    "args": "Hello, I am foxbrobot! :D I am a moderator twitch bot created by twitch user: Walkire",
+    "hostOnly": false
   },
   "points":{
     "details": "shows how many points you or another user has, everyone gets 1 point every 5 seconds in chat",
-    "args": "!points ?username"
+    "args": "!points ?username",
+    "hostOnly": false
   },
   "give": {
     "details": "give points to another user",
-    "args": "!points username amount"
+    "args": "!give username amount",
+    "hostOnly": false
   },
   "leaderboard": {
     "details": "Shows top 5 users with the highest points",
-    "args": "!leaderboard"
+    "args": "!leaderboard",
+    "hostOnly": false
   },
   "bet": {
     "details": "try your luck in a game of chance!",
-    "args": "!bet amount"
+    "args": "!bet amount",
+    "hostOnly": false
   },
   "raffle": {
     "details": "start, end or enter a raffle. Only host can start or end raffle",
-    "args": "!raffle ?option"
+    "args": "!raffle ?option",
+    "hostOnly": true
   },
   "help": {
     "details": "Show help list, or a detailed description of one command",
-    "args": "!help ?command"
+    "args": "!help ?command",
+    "hostOnly": false
+  },
+  "roulette": {
+    "details": "The only way to shoot yourself and its socially acceptable",
+    "args": "!roulette",
+    "hostOnly": false
   }
 }
