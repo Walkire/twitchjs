@@ -86,5 +86,9 @@ client.on("chat", function (channel, userstate, message, self){
           client.action(channel, result);
       }, 1750);
       break;
+    case "!8ball":
+      if(result = games.eightBall(args[1]))
+        client.action(channel, result);
+      break;
   }
 });

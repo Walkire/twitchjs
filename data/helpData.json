@@ -5,7 +5,7 @@
     "hostOnly": false
   },
   "points":{
-    "details": "shows how many points you or another user has, everyone gets 1 point every 5 seconds in chat",
+    "details": "shows how many points you or another user has, everyone gets 1 point every 10 seconds in chat",
     "args": "!points ?username",
     "hostOnly": false
   },
@@ -35,8 +35,13 @@
     "hostOnly": false
   },
   "roulette": {
-    "details": "The only way to shoot yourself and its socially acceptable",
+    "details": "The only way to shoot yourself and its socially acceptable (does anyone read these...plzhelp)",
     "args": "!roulette",
+    "hostOnly": false
+  },
+  "8ball": {
+    "details": "Consult the Magic 8-Ball about the future and all your secrets O.O",
+    "args": "!8ball question",
     "hostOnly": false
   }
 }
