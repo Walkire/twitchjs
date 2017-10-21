@@ -1,4 +1,4 @@
-var viewer = require('./../mutator/viewerAccessor')
+var viewer = require('./../server/viewerAccessor')
 
 exports.roulette = function(user, host){
   var randNum = Math.floor(Math.random()*100)+1;

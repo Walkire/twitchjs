@@ -1,4 +1,4 @@
-var viewer = require('./../mutator/viewerAccessor')
+var viewer = require('./../server/viewerAccessor')
 
 exports.addOne = function(viewers, channel) {
   var results1, results2;

@@ -30,7 +30,8 @@ setInterval(function() {
         mods = mods.concat(json.chatters.moderators);
         viewers = viewers.concat(json.chatters.admins);
         var i = viewers.indexOf(options.identity.username);
-        if(i != -1) viewers.splice(i , 1);
+        if(i != -1) 
+          viewers.splice(i , 1);
         points.addOne(viewers, host);
         help.setMods(mods, host);
       }catch(err){ console.log(err); }
@@ -40,6 +41,13 @@ setInterval(function() {
 
 client.on("ping", function(){
   client.ping();
+});
+
+client.on("hosted", function(channel, username, viewers, autohost){
+  if(username == 'foxbrobot'){
+    //TODO
+    console.log('foxbrobot is hosting '+channel);
+  }
 });
 
 client.on("chat", function (channel, userstate, message, self){

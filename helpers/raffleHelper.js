@@ -1,4 +1,4 @@
-var state = require("./../mutator/stateAccessor")
+var state = require("./../server/stateAccessor")
 var isHost = 0;
 
 exports.sortRaffle = function(arg1, user, host){

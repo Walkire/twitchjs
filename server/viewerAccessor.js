@@ -1,5 +1,5 @@
 var jsonfile = require('jsonfile');
-var viewer = require("./../data/viewerData.json");
+var viewer = require("./data/viewerData.json");
 
 exports.setValue = function(user, value, option, channel) {
   if (viewer[channel] == undefined) return false;

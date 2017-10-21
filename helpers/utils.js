@@ -1,5 +1,5 @@
-var helpList = require('./../data/helpData.json');
-var viewer = require('./../mutator/viewerAccessor');
+var helpList = require('./../server/data/helpData.json');
+var viewer = require('./../server/viewerAccessor');
 
 exports.showHelp = function(command, user, channel){
   if (command == undefined) {

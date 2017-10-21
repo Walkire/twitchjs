@@ -1,2 +1,3 @@
 node_modules
-data/viewerData.json
+server/data/viewerData.json
+config.json
