@@ -4,11 +4,26 @@ Twitch chat mod bot using Javascript and Node
 
 ## How to use for the first time
 
-* Open config.json
-* change username to the bot username
+* Create file called config.json
+* add code below (more options in tmi.js
+```javascript
+{
+    "options": {
+        "debug": true
+    },
+    "connection": {
+        "reconnect": true
+    },
+    "identity": {
+        "username": "",
+        "password": "oauth:"
+    },
+    "channels": []
+}
+```
 * change password to your bots [OAUTH Token](https://twitchapps.com/tmi/)
 * Add a file: viewerData.json in the data folder
-* Add empty brakets in the viewerData.json file
+* Add empty brakets {} in the viewerData.json file
 * Run npm install
 * Run app.js
 
@@ -23,6 +38,7 @@ Twitch chat mod bot using Javascript and Node
 
 * [Node](https://nodejs.org/en/) - language used
 * [twitch.tv chatters](http://tmi.twitch.tv/group/user/chatters/chatters) - JSON used
+* [tmi.js] (https://docs.tmijs.org/) - module used
 
 ## Authors
 
