@@ -5,8 +5,9 @@ Twitch chat mod bot using Javascript and Node
 ## How to use for the first time
 
 * Create file called config.json
-* add code below (more options in tmi.js
+* add code below (more options in tmi.js)
 ```javascript
+//config.json
 {
     "options": {
         "debug": true
@@ -38,7 +39,7 @@ Twitch chat mod bot using Javascript and Node
 
 * [Node](https://nodejs.org/en/) - language used
 * [twitch.tv chatters](http://tmi.twitch.tv/group/user/chatters/chatters) - JSON used
-* [tmi.js] (https://docs.tmijs.org/) - module used
+* [tmi.js](https://docs.tmijs.org/) - module used
 
 ## Authors
 
